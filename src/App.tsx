@@ -6,7 +6,7 @@ import List from './components/List/List';
 function App() {
 
   return (
-    <div>
+    <div className='Wrapper'>
       <Header />
       <Editor />
       <List />

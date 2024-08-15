@@ -19,3 +19,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+*{
+  margin: 0;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-width: 32rem;
+}
