@@ -1,7 +1,7 @@
 const List = () => {
   return(
     <div>
-      <>리스트</>
+      <h5>Todo List</h5>
     </div>
   );
 };
