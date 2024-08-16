@@ -1,6 +1,6 @@
 import './Editor.css';
 import type { Todo } from '../../App';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface EditorProps {
   values: Todo[];
@@ -9,6 +9,7 @@ interface EditorProps {
 
 const Editor = ({values, setValues}: EditorProps) => {
   const [input, setInput] = useState<string>('');
+  const ref = useRef(0);
 
   const formatDate = (): string => {
     const date = new Date();
@@ -24,8 +25,9 @@ const Editor = ({values, setValues}: EditorProps) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    ref.current = ref.current + 1;
     const newTodo: Todo = {
-      id: 0,
+      id: ref.current,
       todo: input,
       date: formatDate(),
     };
