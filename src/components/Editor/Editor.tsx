@@ -25,6 +25,7 @@ const Editor = ({values, setValues}: EditorProps) => {
     e.preventDefault();
 
     const newTodo: Todo = {
+      id: 0,
       todo: input,
       date: formatDate(),
     };

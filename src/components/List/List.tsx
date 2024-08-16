@@ -16,7 +16,7 @@ const List = ({values}: ListProps) => {
         {
           values.map((value) => (
             <TodoList 
-              key={value.todo}
+              key={value.id}
               value={value}
             />
           ))
