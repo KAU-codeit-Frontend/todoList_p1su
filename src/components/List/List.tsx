@@ -4,8 +4,9 @@ import TodoList from './TodoList/TodoList';
 import type {Todo} from '../../App';
 interface ListProps {
   values: Todo[];
+  onUpdate: (value: number) => void;
 }
-const List = ({values}: ListProps) => {
+const List = ({values, onUpdate}: ListProps) => {
   const [search, setSearch] = useState('');
   
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,8 +21,7 @@ const List = ({values}: ListProps) => {
     return values.filter((value) => 
       value.todo.includes(search)
     );
-
-  }
+  };
 
   const filteredValues = getFilteredTodo();
 
@@ -42,6 +42,7 @@ const List = ({values}: ListProps) => {
             <TodoList 
               key={value.id}
               value={value}
+              onUpdate={onUpdate}
             />
           ))
         }

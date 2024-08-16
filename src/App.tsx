@@ -14,11 +14,21 @@ function App() {
 
   const [values, setValues] = useState<Todo[]>([]);
 
+  const onUpdate = (targetId: number) => {
+    setValues(
+      values.map((value) => 
+        value.id === targetId 
+          ? {...value, isChecked: !value.isChecked}
+          : value 
+     )
+    );
+  };
+
   return (
     <div className='Wrapper'>
       <Header />
       <Editor values={values} setValues={setValues}/>
-      <List values={values} />
+      <List values={values} onUpdate={onUpdate}/>
     </div>
   );
 }

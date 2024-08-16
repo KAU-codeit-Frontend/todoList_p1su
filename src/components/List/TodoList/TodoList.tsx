@@ -3,13 +3,24 @@ import type {Todo} from '../../../App';
 
 interface TodoListProps {
   value: Todo;
+  onUpdate: (value: number) => void;
 }
-const TodoList = ({value}: TodoListProps) => {
+const TodoList = ({value, onUpdate}: TodoListProps) => {
   console.log(value);
+
+  const handleUpdate = () => {
+    onUpdate(value.id);
+  };
+
+  console.log(value.isChecked)
   return(
     <div className='todo-wrapper'>
       <form className='todo-form'>
-        <input className='checkbox' type='checkbox'/>
+        <input 
+          className='checkbox' 
+          type='checkbox'
+          onChange={handleUpdate}
+        />
         <p className='todo'>{value.todo}</p>
         <section className='right-section'>
           <p>{value.date}</p>
