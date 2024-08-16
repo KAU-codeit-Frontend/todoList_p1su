@@ -8,18 +8,17 @@ export interface Todo{
   id: number;
   todo: string;
   date: string;
+  isChecked: boolean;
 }
 function App() {
 
   const [values, setValues] = useState<Todo[]>([]);
 
-  console.log(values);
-
   return (
     <div className='Wrapper'>
       <Header />
       <Editor values={values} setValues={setValues}/>
-      <List values={values}/>
+      <List values={values} />
     </div>
   );
 }

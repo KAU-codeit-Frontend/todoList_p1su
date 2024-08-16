@@ -30,6 +30,7 @@ const Editor = ({values, setValues}: EditorProps) => {
       id: ref.current,
       todo: input,
       date: formatDate(),
+      isChecked: false,
     };
 
     setValues([...values, newTodo]);
