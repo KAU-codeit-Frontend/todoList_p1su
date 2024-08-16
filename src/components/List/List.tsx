@@ -14,12 +14,12 @@ const List = ({values}: ListProps) => {
       </form>
       <>
         {
-          values.map((value) => {
+          values.map((value) => (
             <TodoList 
               key={value.todo}
               value={value}
             />
-          })
+          ))
         }
       </>
 
