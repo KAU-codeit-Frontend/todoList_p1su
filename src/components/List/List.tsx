@@ -5,8 +5,9 @@ import type {Todo} from '../../App';
 interface ListProps {
   values: Todo[];
   onUpdate: (value: number) => void;
+  onDelete: (value: number) => void;
 }
-const List = ({values, onUpdate}: ListProps) => {
+const List = ({values, onUpdate, onDelete}: ListProps) => {
   const [search, setSearch] = useState('');
   
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +44,7 @@ const List = ({values, onUpdate}: ListProps) => {
               key={value.id}
               value={value}
               onUpdate={onUpdate}
+              onDelete={onDelete}
             />
           ))
         }

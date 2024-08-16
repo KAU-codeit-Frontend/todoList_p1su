@@ -23,12 +23,15 @@ function App() {
      )
     );
   };
+  const onDelete = (targetId: number) => {
+    setValues(values.filter((value) => value.id!== targetId));
+  };
 
   return (
     <div className='Wrapper'>
       <Header />
       <Editor values={values} setValues={setValues}/>
-      <List values={values} onUpdate={onUpdate}/>
+      <List values={values} onUpdate={onUpdate} onDelete={onDelete}/>
     </div>
   );
 }
