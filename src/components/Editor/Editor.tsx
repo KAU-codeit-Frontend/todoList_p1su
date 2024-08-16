@@ -23,13 +23,13 @@ const Editor = ({values, setValues}: EditorProps) => {
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setValues((prevValues: any) => [
-      ...prevValues,
-      {
-        todo: input,
-        date: formatDate(),
-      }
-    ]);
+
+    const newTodo: Todo = {
+      todo: input,
+      date: formatDate(),
+    };
+
+    setValues([...values, newTodo]);
   };
 
   return(
