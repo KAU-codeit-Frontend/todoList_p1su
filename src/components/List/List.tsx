@@ -12,14 +12,16 @@ const List = ({values}: ListProps) => {
       <form>
         <input className='search-input' placeholder='검색어를 입력하세요'/>
       </form>
-      {
-        values.map((value) => {
-          <TodoList 
-            key={value.todo}
-            value={value}
-          />
-        })
-      }
+      <>
+        {
+          values.map((value) => {
+            <TodoList 
+              key={value.todo}
+              value={value}
+            />
+          })
+        }
+      </>
 
     </div>
   );
