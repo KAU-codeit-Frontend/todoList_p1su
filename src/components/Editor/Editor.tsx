@@ -3,8 +3,8 @@ import type { Todo } from '../../App';
 import { useState } from 'react';
 
 interface EditorProps {
-  values: Todo;
-  setValues: (value: Todo) => void;
+  values: Todo[];
+  setValues: (value: Todo[]) => void;
 }
 
 const Editor = ({values, setValues}: EditorProps) => {

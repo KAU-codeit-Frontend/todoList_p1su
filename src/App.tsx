@@ -18,7 +18,7 @@ function App() {
     <div className='Wrapper'>
       <Header />
       <Editor values={values} setValues={setValues}/>
-      <List />
+      <List values={values}/>
     </div>
   );
 }
