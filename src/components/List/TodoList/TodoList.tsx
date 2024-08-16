@@ -13,7 +13,7 @@ const TodoList = ({value}: TodoListProps) => {
         <p className='todo'>{value.todo}</p>
         <section className='right-section'>
           <p>{value.date}</p>
-          <button type='submit'>
+          <button className='delete'type='submit'>
             삭제
           </button>
         </section>
