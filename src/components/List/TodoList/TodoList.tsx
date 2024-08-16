@@ -2,10 +2,9 @@ import './TodoList.css';
 import type {Todo} from '../../../App';
 
 interface TodoListProps {
-  key: string;
   value: Todo;
 }
-const TodoList = ({key, value}: TodoListProps) => {
+const TodoList = ({value}: TodoListProps) => {
   console.log(value);
   return(
     <div className='todo-wrapper'>
